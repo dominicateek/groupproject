@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      width: 80%;
+      max-width: 600px;
+    }
+    h1 { margin-bottom: 20px; }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      text-align: left;
+    }
+    input[type="range"] {
+      width: 100%;
+    }
+    select, button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: none;
+      background: #1f4068;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background: #e43f5a; transform: scale(1.05); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚙️ Settings</h1>
+    <label for="volume">Volume</label>
+    <input type="range" id="volume" min="0" max="100" value="70">
+
+    <label for="difficulty">Difficulty</label>
+    <select id="difficulty">
+      <option>Easy</option>
+      <option selected>Normal</option>
+      <option>Hard</option>
+    </select>
+
+    <label for="language">Language</label>
+    <select id="language">
+      <option>English</option>
+      <option>Spanish</option>
+      <option>French</option>
+    </select>
+
+    <button onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
+  </div>
+</body>
+</html>
