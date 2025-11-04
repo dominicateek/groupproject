@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> 
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Character Screen</title>
   <style>
     body {
-      margin: 0; font-family: 'Poppins', sans-serif;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
-      height: 100vh; display: flex; justify-content: center; align-items: center;
-      color: white; text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
     }
     .container {
-      background: rgba(0,0,0,0.4); padding: 40px;
-      border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      width: 80%; max-width: 600px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      width: 80%;
+      max-width: 600px;
     }
     select, button {
-      margin: 10px; padding: 10px 20px; border-radius: 8px; border: none;
-      background: #1f4068; color: white; cursor: pointer;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      background: #1f4068;
+      color: white;
+      cursor: pointer;
       transition: 0.3s;
     }
-    button:hover, select:hover { background: #e43f5a; transform: scale(1.05); }
-    #charInfo { margin-top: 20px; text-align: left; }
+    button:hover, select:hover {
+      background: #e43f5a;
+      transform: scale(1.05);
+    }
+    #charInfo {
+      margin-top: 25px;
+      text-align: left;
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    h2 {
+      margin-top: 0;
+      color: #e8e8e8;
+    }
   </style>
 </head>
 <body>
@@ -30,4 +57,44 @@
     <h1>🧙 Character Index</h1>
     <select id="charSelect" onchange="showCharacter()">
       <option value="arion">Arion the Brave</option>
-      <option value="lyra">Lyra the
+      <option value="lyra">Lyra the Mystic</option>
+      <!-- <option value="kael">Kael the Shadow</option> -->
+    </select>
+
+    <div id="charInfo"></div>
+
+    <button onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
+  </div>
+
+  <script>
+    function showCharacter() {
+      const infoBox = document.getElementById("charInfo");
+      const choice = document.getElementById("charSelect").value;
+
+      let characterData = {
+        arion: {
+          name: "Arion the Brave",
+          desc: "A fearless knight whose courage inspires allies in battle. Arion wields the Sword of Light and never backs down from protecting the innocent.",
+        },
+        lyra: {
+          name: "Lyra the Mystic",
+          desc: "A gifted sorceress with ancient knowledge of the arcane arts. Lyra channels her magic to heal and shield her companions from harm.",
+        },
+        // kael: {
+        //   name: "Kael the Shadow",
+        //   desc: "A silent assassin who moves unseen through darkness, striking before his enemies even sense his presence."
+        // }
+      };
+
+      const char = characterData[choice];
+      infoBox.innerHTML = `
+        <h2>${char.name}</h2>
+        <p>${char.desc}</p>
+      `;
+    }
+
+    // Show first character by default
+    showCharacter();
+  </script>
+</body>
+</html>
