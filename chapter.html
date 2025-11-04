@@ -6,15 +6,15 @@
   <title>Chapter Screen</title>
   <style>
     body {
-      margin: 0; 
+      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
-      height: 100vh; 
+      height: 100vh;
       display: flex;
-      justify-content: center; 
+      justify-content: center;
       align-items: center;
       color: white;
-      text-align: center; 
+      text-align: center;
     }
     .container {
       background: rgba(0, 0, 0, 0.4);
@@ -25,6 +25,11 @@
       max-width: 600px;
     }
     h1 { margin-bottom: 20px; }
+    ul {
+      text-align: left;
+      margin-top: 20px;
+      line-height: 1.8;
+    }
     .back-btn {
       margin-top: 30px;
       padding: 10px 20px;
@@ -40,12 +45,11 @@
 </head>
 <body>
   <div class="container">
-    <h1>📖 Chapter Screen</h1>
-    <p>Choose your chapter to begin your adventure!</p>
+    <h1>📖 Chapter Select Screen</h1>
     <ul>
-      <li>Chapter 1: The Awakening</li>
-      <li>Chapter 2: Into the Shadows</li>
-      <li>Chapter 3: Rise of the Hero</li>
+      <li><strong>Previous and next chapter buttons</strong> — Allows the user to navigate to which chapter they want to play.</li>
+      <li><strong>Play button</strong> — Plays the chapter that the user selected.</li>
+      <li><strong>Change save file button</strong> — Navigates the user to the save file screen.</li>
     </ul>
     <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
   </div>
