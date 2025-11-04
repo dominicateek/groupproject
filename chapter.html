@@ -5,53 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chapter Screen</title>
   <style>
-    body { 
-      margin: 0; 
-      font-family: 'Poppins', sans-serif;
+    body {
+      margin: 0; font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
+      height: 100vh; display: flex; justify-content: center; align-items: center;
+      color: white; text-align: center;
     }
     .container {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      width: 80%;
-      max-width: 600px;
+      background: rgba(0,0,0,0.4); padding: 40px;
+      border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      width: 80%; max-width: 600px;
     }
     h1 { margin-bottom: 20px; }
-    ul {
-      text-align: left;
-      margin-top: 20px;
-      line-height: 1.8;
-    }
-    .back-btn {
-      margin-top: 30px;
-      padding: 10px 20px;
-      background: #1f4068;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    button {
+      margin: 10px; padding: 10px 20px; background: #1f4068;
+      border: none; border-radius: 8px; color: white; cursor: pointer;
       transition: 0.3s;
     }
-    .back-btn:hover { background: #e43f5a; transform: scale(1.05); }
+    button:hover { background: #e43f5a; transform: scale(1.05); }
+    #chapter-name { font-size: 20px; margin-top: 10px; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>📖 Chapter Select Screen</h1>
-    <ul>
-      <li><strong>Previous and next chapter buttons</strong> — Allows the user to navigate to which chapter they want to play.</li>
-      <li><strong>Play button</strong> — Plays the chapter that the user selected.</li>
-      <li><strong>Change save file button</strong> — Navigates the user to the save file screen.</li>
-    </ul>
-    <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
+    <h1>📖 Chapter Select</h1>
+    <p id="chapter-name">Current Chapter: <strong>1 – The Awakening</strong></p>
+    <div>
+      <button onclick="prevChapter()">⬅ Previous</button>
+      <button onclick="nextChapter()">Next ➡</button>
+    </div>
+    <button onclick="playChapter()">▶ Play</button>
+    <button onclick="window.location.href='saves.html'">💾 Change Save File</button>
+    <button onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
   </div>
+
+  <script>
+    const chapters = [
+      "1 – The Awakening",
+      "2 – Into the Shadows",
+      "3 – Rise of the Hero"
+    ];
+    let index = 0;
+
+    function update() {
+      document.getElementById("chapter-name").innerHTML =
+        "Current Chapter: <strong>" + chapters[index] + "</strong>";
+    }
+
+    function nextChapter() {
+      index = (index + 1) % chapters.length;
+      update();
+    }
+
+    function prevChapter() {
+      index = (index - 1 + chapters.length) % chapters.length;
+      update();
+    }
+
+    function playChapter() {
+      alert("Playing " + chapters[index] + "...");
+    }
+  </script>
 </body>
 </html>
