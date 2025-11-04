@@ -11,32 +11,32 @@
       background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
       height: 100vh;
       display: flex;
-      justify-content: center;  
+      justify-content: center;
       align-items: center;
       color: white;
       text-align: center;
     }
-    .container { 
+    .container {
       background: rgba(0, 0, 0, 0.4);
-      padding: 40px; 
+      padding: 40px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
       width: 80%;
       max-width: 600px;
     }
     h1 { margin-bottom: 20px; }
-    .stats {
+    ul {
       text-align: left;
       margin-top: 20px;
-      font-size: 18px;
+      line-height: 1.8;
     }
     .back-btn {
       margin-top: 30px;
       padding: 10px 20px;
       background: #1f4068;
+      color: white;
       border: none;
       border-radius: 8px;
-      color: white;
       cursor: pointer;
       transition: 0.3s;
     }
@@ -45,16 +45,12 @@
 </head>
 <body>
   <div class="container">
-    <h1>🧙 Character Screen</h1>
-    <img src="https://via.placeholder.com/150" alt="Character Avatar" style="border-radius: 50%; margin-bottom: 20px;">
-    <div class="stats">
-      <p><strong>Name:</strong> Arion the Brave</p>
-      <p><strong>Level:</strong> 12</p>
-      <p><strong>Health:</strong> 180 / 200</p>
-      <p><strong>Mana:</strong> 90 / 120</p>
-      <p><strong>Weapon:</strong> Sword of Light</p>
-      <p><strong>Armor:</strong> Knight’s Plate</p>
-    </div>
+    <h1>🧙 Character Index Screen</h1>
+    <ul>
+      <li><strong>Character Files</strong> — Each character has their own interactable file which displays information about that character.</li>
+      <li><strong>Drop-down menu</strong> — Expands the file to show detailed character info.</li>
+      <li><strong>Return button</strong> — A back-to-menu button to navigate the user back to the main menu.</li>
+    </ul>
     <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
   </div>
 </body>
