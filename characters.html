@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Screen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      width: 80%;
+      max-width: 600px;
+    }
+    h1 { margin-bottom: 20px; }
+    .stats {
+      text-align: left;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .back-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #1f4068;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .back-btn:hover { background: #e43f5a; transform: scale(1.05); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧙 Character Screen</h1>
+    <img src="https://via.placeholder.com/150" alt="Character Avatar" style="border-radius: 50%; margin-bottom: 20px;">
+    <div class="stats">
+      <p><strong>Name:</strong> Arion the Brave</p>
+      <p><strong>Level:</strong> 12</p>
+      <p><strong>Health:</strong> 180 / 200</p>
+      <p><strong>Mana:</strong> 90 / 120</p>
+      <p><strong>Weapon:</strong> Sword of Light</p>
+      <p><strong>Armor:</strong> Knight’s Plate</p>
+    </div>
+    <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
+  </div>
+</body>
+</html>
