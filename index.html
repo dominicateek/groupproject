@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game Main Menu</title>
+  <!-- Add Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -72,19 +74,20 @@
   <footer>© 2025 Your Game Studio</footer>
 
   <script>
+    // Navigate to the correct page based on which button is clicked
     function openMenu(menuName) {
       switch (menuName) {
         case 'chapter':
-          alert('Opening Chapter Screen...');
+          window.location.href = 'chapter.html';
           break;
         case 'saves':
-          alert('Opening Game Saves...');
+          window.location.href = 'saves.html';
           break;
         case 'character':
-          alert('Opening Character Screen...');
+          window.location.href = 'character.html';
           break;
         case 'settings':
-          alert('Opening Settings...');
+          window.location.href = 'settings.html';
           break;
         default:
           alert('Unknown menu option.');
