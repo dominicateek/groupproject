@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Main Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .menu-container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px 60px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+    }
+
+    .menu-button {
+      display: block;
+      width: 220px;
+      margin: 15px auto;
+      padding: 12px;
+      background: #1f4068;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .menu-button:hover {
+      background: #e43f5a;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #e43f5a;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu-container">
+    <h1>Main Menu</h1>
+    <button class="menu-button" onclick="openMenu('chapter')">📖 Chapter Screen</button>
+    <button class="menu-button" onclick="openMenu('saves')">💾 Game Saves</button>
+    <button class="menu-button" onclick="openMenu('character')">🧙 Character Screen</button>
+    <button class="menu-button" onclick="openMenu('settings')">⚙️ Settings</button>
+  </div>
+
+  <footer>© 2025 Your Game Studio</footer>
+
+  <script>
+    function openMenu(menuName) {
+      switch (menuName) {
+        case 'chapter':
+          alert('Opening Chapter Screen...');
+          break;
+        case 'saves':
+          alert('Opening Game Saves...');
+          break;
+        case 'character':
+          alert('Opening Character Screen...');
+          break;
+        case 'settings':
+          alert('Opening Settings...');
+          break;
+        default:
+          alert('Unknown menu option.');
+      }
+    }
+  </script>
+
+</body>
+</html>
