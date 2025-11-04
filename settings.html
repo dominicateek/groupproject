@@ -4,54 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Settings Screen</title>
-  <style> 
+  <style>
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
+      margin: 0; font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
+      height: 100vh; display: flex; justify-content: center; align-items: center;
+      color: white; text-align: center;
+      transition: filter 0.5s;
     }
     .container {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-      width: 80%;
-      max-width: 600px;
+      background: rgba(0,0,0,0.4); padding: 40px;
+      border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      width: 80%; max-width: 600px;
     }
-    h1 { margin-bottom: 20px; }
-    ul {
-      text-align: left;
-      margin-top: 20px;
-      line-height: 1.8;
-    }
-    .back-btn {
-      margin-top: 30px;
-      padding: 10px 20px;
-      background: #1f4068;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+    button, input[type=range] {
+      margin: 10px; padding: 10px 20px; border-radius: 8px; border: none;
+      background: #1f4068; color: white; cursor: pointer;
       transition: 0.3s;
     }
-    .back-btn:hover { background: #e43f5a; transform: scale(1.05); }
+    button:hover { background: #e43f5a; transform: scale(1.05); }
+    .hidden { display: none; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>⚙️ Settings Screen</h1>
-    <ul>
-      <li><strong>Performance mode</strong> — Allows the user to disable some functions for smoother gameplay.</li>
-      <li><strong>Audio button</strong> — Opens the audio settings screen.</li>
-      <li><strong>Audio slider</strong> — Lets the user adjust the game’s volume.</li>
-    </ul>
-    <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
+    <h1>⚙️ Settings</h1>
+    <button id="perfBtn" onclick="togglePerformance()">Toggle Performance Mode</button>
+    <button onclick="toggleAudio()">🎵 Audio Settings</button>
+    <div id="audioSection" class="hidden">
+      <p>Volume: <span id="volValue">50</span>%</p>
+      <input type="range" min="0" max="100" value="50" id="volume" oninput="updateVolume()">
+    </div>
+    <button onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
   </div>
+
+  <script>
+    let perf = false;
+    function togglePerformance() {
+      perf = !perf;
+      document.body.style.filter = perf ? "brightness(0.8)" : "brightness(1)";
+      alert("Performance mode " + (perf ? "ON" : "OFF"));
+    }
+    function toggleAudio() {
+      document.getElementById("audioSection").classList.toggle("hidden");
+    }
+    function updateVolume() {
+      document.getElementById("volValue").innerText = document.getElementById("volume").value;
+    }
+  </script>
 </body>
 </html>
