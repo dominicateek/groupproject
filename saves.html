@@ -10,13 +10,13 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
       height: 100vh;
-      display: flex; 
-      justify-content: center; 
+      display: flex;
+      justify-content: center;
       align-items: center;
       color: white;
       text-align: center;
     }
-    .container { 
+    .container {
       background: rgba(0, 0, 0, 0.4);
       padding: 40px;
       border-radius: 15px;
@@ -24,22 +24,19 @@
       width: 80%;
       max-width: 600px;
     }
-    .save-slot {
-      background: #1f4068;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
+    h1 { margin-bottom: 20px; }
+    ul {
+      text-align: left;
+      margin-top: 20px;
+      line-height: 1.8;
     }
-    .save-slot:hover { background: #e43f5a; transform: scale(1.05); }
     .back-btn {
       margin-top: 30px;
       padding: 10px 20px;
       background: #1f4068;
+      color: white;
       border: none;
       border-radius: 8px;
-      color: white;
       cursor: pointer;
       transition: 0.3s;
     }
@@ -48,10 +45,12 @@
 </head>
 <body>
   <div class="container">
-    <h1>💾 Game Saves</h1>
-    <div class="save-slot">Save Slot 1 - Chapter 2</div>
-    <div class="save-slot">Save Slot 2 - Chapter 5</div>
-    <div class="save-slot">Empty Slot</div>
+    <h1>💾 Save File Screen</h1>
+    <ul>
+      <li><strong>Change save file button</strong> — Allows the user to switch between different save files.</li>
+      <li><strong>Load button</strong> — Loads the selected save file and continues the game.</li>
+      <li><strong>Return button</strong> — Takes the user back to the main menu.</li>
+    </ul>
     <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Main Menu</button>
   </div>
 </body>
